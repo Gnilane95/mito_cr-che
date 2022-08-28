@@ -8,6 +8,9 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <title>Back-office</title>
     </head>
+    <?php include ('helpers/functions.php'); 
+    
+    ?>
     <body>
         <div class="parent flex">
             <div class="nav_left bg-gray-700 text-white h-screen sticky top-0 w-[25%] px-14 pt-10">

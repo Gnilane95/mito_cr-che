@@ -4,12 +4,14 @@
                     <table class="table w-full">
                         <!-- head -->
                         <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                        </tr>
+                            <tr>
+                                <th></th>
+                                <th>Nom</th>
+                                <th>Prénom</th>
+                                <th>Liste d'attente</th>
+                                <th>Modifier</th>
+                                <th>Supprimer</th>
+                            </tr>
                         </thead>
                         <tbody>
                         <!-- row 1 -->
