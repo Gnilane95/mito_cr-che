@@ -1,11 +1,5 @@
-<?php
-session_start();
-$title = "BackOffice";
-include ('partials/_header.php');
 
-?>
-        <?php require_once('partials/_alert.php') ?>
-        <div class="parent flex gap-50">
+        <div class="parent flex">
             <div class="nav_left bg-gray-700 text-white h-screen sticky top-0 w-[25%] px-14 pt-10">
                 <p class="text-2xl font-black pb-10">Back-Office</p>
                 <ul class="menu  rounded-box">
@@ -17,14 +11,9 @@ include ('partials/_header.php');
                     <li class="">
                         <span class="font-bold">Enfants</span>
                     </li>
-                    <li class="pl-10"><a href="backoffice.php ">Liste des enfants</a></li>
+                    <li class="pl-10"><a href="backoffice.php">Liste des enfants</a></li>
                     <li class="pl-10"><a href="ajoutez-enfant.php">Ajouter un enfant</a></li>
                     <li class="pl-10"><a href="">Liste d'attente</a></li>
                 </ul>
             </div>
-            <?php include ('liste-enfants.php'); ?>
-            <div>
-            </div>
-        </div>
-    </body>
-</html>
+        <div>

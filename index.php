@@ -1,7 +1,6 @@
 <?php
 $title = "Accueil";
 include ('partials/_header.php');
-include ('helpers/functions.php');
 
 ?>
 <nav class="mb-28">
