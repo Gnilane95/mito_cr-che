@@ -44,7 +44,7 @@
                                         <td><?= $enfant ['nom'] ?></td>
                                         <td><?= $enfant ['prenom'] ?></td>
                                         <td><?= $enfant ['liste_attente'] ?></td>
-                                        <td><?php include ('partials/_modify.php') ?></td>
+                                        <td><?php include ('partials/_modifyEnfant.php') ?></td>
                                         <td><?php include ('partials/_modalEnfants.php') ?></td>
                                     </tr>
                                     <?php endforeach ?>

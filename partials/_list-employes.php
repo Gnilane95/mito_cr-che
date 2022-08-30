@@ -46,7 +46,7 @@
                                         <td><?= $employe ['prenom'] ?></td>
                                         <td><?= $employe ['email'] ?></td>
                                         <td><?= $employe ['type_contrat'] ?></td>
-                                        <td><?php include ('partials/_modify.php') ?></td>
+                                        <td><?php include ('partials/_modifyEmploye.php') ?></td>
                                         <td><?php include ('partials/_modalEmployes.php') ?></td>
                                     </tr>
                                     <?php endforeach ?>

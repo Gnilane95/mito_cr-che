@@ -83,9 +83,12 @@ if (!empty($_POST["submited"])) {
                     </div>
                     <!-- input date de naissance -->
                     <div class="p-5">
+                        <?php 
+                            $dateNaissance = date("Y-m-d", strtotime($enfant['date_naissance']))
+                        ?>
 
                         <label class="text-red-500 font-semibold block pb-3" for="naissance"> Date de naissance :</label>
-                        <input class="input input-bordered w-full max-w-xs" name="naissance" type="date" value="<?php echo date('Y-m-d',strtotime($enfant["congestart"])) ?>"/>
+                        <input class="input input-bordered w-full max-w-xs" name="naissance" type="date" value="<?=  $dateNaissance ?>"/>
                         <p>
                             <?php
                             if(!empty($error["naissance"])){
@@ -96,8 +99,11 @@ if (!empty($_POST["submited"])) {
                     </div>
                     <!-- input entree en creche -->
                     <div class="p-5 ">
+                        <?php 
+                            $dateEntree = date("Y-m-d", strtotime($enfant['entree_en_creche']))
+                        ?>
                         <label class="text-red-500 font-semibold block pb-3" for="entree">Date d'entrée en creche :</label>
-                        <input name="entree" type="date" value="DOMString" class="input input-bordered w-full max-w-xs" value="<?php if(!empty($_POST["entree"])){echo $_POST["entree"];} ?>" />
+                        <input name="entree" type="date" class="input input-bordered w-full max-w-xs" value="<?= $dateEntree ?>" />
                         <p>
                             <?php
                             if(!empty($error["entree"])){
@@ -108,7 +114,7 @@ if (!empty($_POST["submited"])) {
                     <!-- input name pere -->
                     <div class="p-5">
                         <label class="text-red-500 font-semibold block pb-3" for="pere"> Prénom et Nom du Père :</label>
-                        <input name="pere" type="text" placeholder="Duyère Daniel" class="input input-bordered w-full max-w-xs"   value="<?php if(!empty($_POST["pere"])){echo $_POST["pere"];} ?>"/>
+                        <input name="pere" type="text" placeholder="Duyère Daniel" class="input input-bordered w-full max-w-xs" value="<?= $enfant["prenom_nom_du_pere"] ?>"/>
                         <p>
                             <?php
                             if(!empty($error["pere"])){
@@ -120,7 +126,7 @@ if (!empty($_POST["submited"])) {
                     <!-- input name mere -->
                     <div class="p-5">
                         <label class="text-red-500 font-semibold block pb-3" for="mere"> Prénom et Nom de la mère :</label>
-                        <input name="mere" type="text" placeholder="Lavache Margerite" class="input input-bordered w-full max-w-xs"  value="<?php if(!empty($_POST["mere"])){echo $_POST["mere"];} ?>" />
+                        <input name="mere" type="text" placeholder="Lavache Margerite" class="input input-bordered w-full max-w-xs"  value="<?= $enfant["prenom_nom_de_la_mere"] ?>" />
                         <p>
                             <?php
                             if(!empty($error["mere"])){
@@ -132,7 +138,7 @@ if (!empty($_POST["submited"])) {
                     <div class="p-5">
                         <label class="text-red-500 font-semibold block pb-3" for="adresse"> Adresse :</label>
                         <input name="adresse" type="text" class="input input-bordered w-full max-w-xs"
-                         value="<?php if(!empty($_POST["adresse"])){echo $_POST["adresse"];} ?>"  />
+                         value="<?= $enfant["adresse"] ?>"  />
                         <p>
                             <?php
                             if(!empty($error["adresse"])){
@@ -144,7 +150,7 @@ if (!empty($_POST["submited"])) {
                     <!-- email -->
                     <div class="p-5">
                         <label class="text-red-500 font-semibold block pb-3" for="email"> E-mail :</label>
-                        <input name="email" type="email" placeholder="info@site.com" class="input input-bordered w-full max-w-xs" value="<?php if(!empty($_POST["email"])){echo $_POST["email"];} ?>" />
+                        <input name="email" type="email" placeholder="info@site.com" class="input input-bordered w-full max-w-xs" value="<?= $enfant["email"] ?>" />
                         <p>
                             <?php
                             if(!empty($error["email"])){
@@ -156,7 +162,7 @@ if (!empty($_POST["submited"])) {
                     <!-- Tel -->
                     <div class="p-5">
                         <label class="text-red-500 font-semibold block pb-3" for="tel"> Tel :</label>
-                        <input name="tel" type="tel" placeholder="00 00 00 00 00" class="input input-bordered w-full max-w-xs" value="<?php if(!empty($_POST["tel"])){echo $_POST["tel"];} ?>">
+                        <input name="tel" type="tel" placeholder="00 00 00 00 00" class="input input-bordered w-full max-w-xs" value="<?= $enfant["telephone"] ?>">
                         <p>
                             <?php
                             if(!empty($error["tel"])){
@@ -171,17 +177,22 @@ if (!empty($_POST["submited"])) {
 
                         <div class="form-control ">
                             <label class="label cursor-pointer block flex items-center  pb-3">
-                                <input type="radio" name="attente" class="radio checked:bg-black-500" checked />
+                                <input type="radio" name="attente" class="radio checked:bg-black-500" <?php
+                                if ($enfant['liste_attente'] == "Oui") echo 'checked = "checked"'
+                                ?> />
                                 <span class="label-text  pl-3">Oui</span>
                             </label>
                         </div>
                         <div class="form-control ">
                             <label class=" label cursor-pointer block flex items-center pb-3">
-                                <input type="radio" name="attente" class="radio checked:bg-black-500" />
+                                <input type="radio" name="attente" class="radio checked:bg-black-500" <?php
+                                if ($enfant['liste_attente'] == "Non") echo 'checked = "checked"'
+                                ?>/>
                                 <span class="label-text pl-3">Non</span>
                             </label>
 
                         </div>
+
                         <p>
                             <?php
                             if(!empty($error["attente"])){
