@@ -3,7 +3,14 @@
     //inclure PDO pour la connexion à la BDD
     require_once ("helpers/pdo.php");
 
-    require_once ("sql/selectEnfants.php");
+    //1-Requête pour récupérer les enfants
+    $sql = "SELECT id, nom, prenom, liste_attente FROM enfants WHERE liste_attente ='Oui'";
+    //2-on prépare la requête (preformatter une requête)
+    $query = $pdo->prepare($sql);
+    //3-Execute ma requête
+    $query->execute();
+    //4-On stock le résultat dans une variable
+    $enfants = $query->fetchAll();
     #debug_array($enfants);
 
     $error = [];
@@ -14,7 +21,10 @@
 
 
 <div class="ml-28 py-10">
-                <h1 class="text-2xl text-red-500 font-black pb-10">Liste des enfants</h1>
+                <?php
+                $h1 = "Liste d'attente "; 
+                include ('partials/_h1.php'); 
+                ?>                
                 <div class="overflow-x-auto">
                     <table class="table w-full">
                         <!-- head -->
@@ -42,7 +52,7 @@
                                         <td><?= $enfant ['prenom'] ?></td>
                                         <td><?= $enfant ['liste_attente'] ?></td>
                                         <td><?php include ('partials/_modify.php') ?></td>
-                                        <td><?php include ('partials/_modal.php') ?></td>
+                                        <td><?php include ('partials/_modalEnfants.php') ?></td>
                                     </tr>
                                     <?php endforeach ?>
                                         

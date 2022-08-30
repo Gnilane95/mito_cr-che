@@ -14,7 +14,7 @@ $title = "BackOffice";
                     <?php 
                     $h1 ;
                     require_once('partials/_alert.php');
-                    include ('partials/_liste-enfants.php') ; 
+                    include ('partials/_modifierEnfants-content.php') ; 
                     
                     ?>
                 </div>

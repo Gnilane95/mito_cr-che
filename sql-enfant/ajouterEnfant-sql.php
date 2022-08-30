@@ -22,4 +22,4 @@ $query->execute();
 
 //5- Redirection
 $_SESSION["success"] = "Enfant bien ajouté";
-header("Location: .php");
+header("Location: backoffice.php");

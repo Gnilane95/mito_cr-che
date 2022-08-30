@@ -1,0 +1,9 @@
+<?php
+require_once('faillesEmploye-xss.php');
+require_once('input-employe-nom.php');
+require_once('input-employe-prenom.php');
+require_once('input-employe-email.php');
+require_once('input-employe-tel.php');
+require_once('input-employe-type.php');
+require_once('input-employe-date.php');
+require_once('input-employe-adresse.php');

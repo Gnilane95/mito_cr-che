@@ -12,7 +12,7 @@
         </div>
         <div class="modal-action">
             <label for="<?= $enfant["id"] ?>" class="btn btn-primary">
-            <a href="delate.php?id=<?= $enfant["id"] ?>&nom=<?= $enfant["nom"] ?>" class="">Oui</a></label>
+            <a href="deleteEnfant.php?id=<?= $enfant["id"] ?>&nom=<?= $enfant["nom"] ?>" class="">Oui</a></label>
         </div>
         </div>
     </div>

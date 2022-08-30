@@ -14,18 +14,23 @@ $success = false ;
 
 if (!empty($_POST["submited"])) {
     //2-Faille xss
-        require_once("validation-formulaire/include.php");
+        require_once("validation-formulaire-enfant/include.php");
         #debug_array($_FILES);
-        // if (count($error) == 0){
-        //     require_once("sql/ajouterEnfants-sql.php");
-        // }
+        if (count($error) == 0){
+            require_once("sql-enfant/ajouterEnfant-sql.php");
+        }
         #var_dump (count($error));
 }
 
 ?>
-            <h1 class="font-bold text-center px-5 text-red-500 text-5xl p-6"> Ajoutez Un Enfant</h1>
+                <div class="pt-10 pl-20">
+                    <?php 
+                    $h1 = "Ajouter un enfant "; 
+                    include ('partials/_h1.php'); 
+                    ?>
+                </div>
                 <!-- formulaire Enfant -->
-                <form class="py-8 pl-48" method="POST">
+                <form class="py-8 pl-20" method="POST">
                     <!-- input nom -->
                     <div class="p-5">
 
