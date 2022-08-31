@@ -51,7 +51,7 @@ if (!empty($_POST["submited"])) {
 ?>
                 <div class="pt-10 pl-20">
                     <?php 
-                    $h1 = "Ajouter un enfant "; 
+                    $h1 = "Modifier "; 
                     include ('partials/_h1.php'); 
                     ?>
                 </div>

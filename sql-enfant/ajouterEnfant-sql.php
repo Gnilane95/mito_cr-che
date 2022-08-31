@@ -1,6 +1,6 @@
 <?php
 //1- Ecriture de la requête
-$sql = "INSERT INTO enfants(nom, prenom, entree_en_creche, date_naissance, 	prenom_nom_du_pere, prenom_nom_de_la_mere, email, telephone, adresse, liste_attente) VALUES(:nom, :prenom, :entree_en_creche, :date_naissance, :prenom_nom_du_pere, :prenom_nom_de_la_mere, :email, :telephone, :adresse, :liste_attente)";
+$sql = "INSERT INTO enfants(nom, prenom, entree_en_creche, date_naissance, 	prenom_nom_du_pere, prenom_nom_de_la_mere, email, telephone, adresse, liste_attente, url_img) VALUES(:nom, :prenom, :entree_en_creche, :date_naissance, :prenom_nom_du_pere, :prenom_nom_de_la_mere, :email, :telephone, :adresse, :liste_attente, :url_img)";
 
 //2- On prépare la requête
 $query = $pdo->prepare($sql);
@@ -16,6 +16,7 @@ $query->bindValue(':email', $email, PDO::PARAM_STR);
 $query->bindValue(':telephone', $tel, PDO::PARAM_STMT);
 $query->bindValue(':adresse', $adresse, PDO::PARAM_STMT);
 $query->bindValue(':liste_attente', $attente, PDO::PARAM_STMT);
+$query->bindValue(':url_img', $url_img, PDO::PARAM_STR);
 
 //4- On exécute la requête
 $query->execute();

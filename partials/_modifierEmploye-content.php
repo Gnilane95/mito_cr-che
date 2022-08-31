@@ -1,6 +1,4 @@
 <?php
-$title = "Ajouter_Employe";
-include ('partials/_header.php');
 include ('helpers/functions.php');
 //inclure PDO pour la connexion à la BDD
 require_once ("helpers/pdo.php");
@@ -51,7 +49,7 @@ if (!empty($_POST["submited"])) {
 ?>
                 <div class="pt-10 pl-20">
                     <?php 
-                    $h1 = "Ajouter un employe "; 
+                    $h1 = "Modifier "; 
                     include ('partials/_h1.php'); 
                     ?>
                 </div>

@@ -42,10 +42,10 @@
                                     <?php foreach ($employes as $employe) : ?>
                                     <tr class="hover:text-blue-500 hover:font-bold">
                                         <th class="text-red-500"><?= $index++ ?></th>
-                                        <td><?= $employe ['nom'] ?></td>
-                                        <td><?= $employe ['prenom'] ?></td>
-                                        <td><?= $employe ['email'] ?></td>
-                                        <td><?= $employe ['type_contrat'] ?></td>
+                                        <td><a href="singleEmploye.php?id=<?= $employe['id']?>&nom=<?= $employe['nom']?>"><?= $employe ['nom'] ?></a></td>
+                                        <td><a href="singleEmploye.php?id=<?= $employe['id']?>&nom=<?= $employe['nom']?>"><?= $employe ['prenom'] ?></a></td>
+                                        <td><a href="singleEmploye.php?id=<?= $employe['id']?>&nom=<?= $employe['nom']?>"><?= $employe ['email'] ?></a></td>
+                                        <td><a href="singleEmploye.php?id=<?= $employe['id']?>&nom=<?= $employe['nom']?>"><?= $employe ['type_contrat'] ?></a></td>
                                         <td><?php include ('partials/_modifyEmploye.php') ?></td>
                                         <td><?php include ('partials/_modalEmployes.php') ?></td>
                                     </tr>

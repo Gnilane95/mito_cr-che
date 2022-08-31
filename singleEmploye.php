@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-$title = "Enfant";
+$title = "Employés";
 include ('partials/_header.php');
 
 
@@ -16,7 +16,7 @@ include ('partials/_header.php');
                     <?php 
                     $h1 ;
                     require_once('partials/_alert.php');
-                    include ('partials/_singleEnfant.php') ; 
+                    include ('partials/_singleEmploye.php') ; 
                     ?>
                 </div>
             </div>

@@ -41,9 +41,10 @@
                                     <?php foreach ($enfants as $enfant) : ?>
                                     <tr class="hover:text-blue-500 hover:font-bold">
                                         <th class="text-red-500"><?= $index++ ?></th>
-                                        <td><?= $enfant ['nom'] ?></td>
-                                        <td><?= $enfant ['prenom'] ?></td>
-                                        <td><?= $enfant ['liste_attente'] ?></td>
+                                        <td><a href="singleEnfant.php?id=<?= $enfant['id']?>&nom=<?= $enfant['nom']?>"><?= $enfant ['nom'] ?></a></td>
+                                        <td><a href="singleEnfant.php?id=<?= $enfant['id']?>&nom=<?= $enfant['nom']?>"><?= $enfant ['prenom'] ?></a></td>
+                                        <td><a href="singleEnfant.php?id=<?= $enfant['id']?>&nom=<?= $enfant['nom']?>"><?= $enfant ['liste_attente'] ?></a></td>
+                                       
                                         <td><?php include ('partials/_modifyEnfant.php') ?></td>
                                         <td><?php include ('partials/_modalEnfants.php') ?></td>
                                     </tr>

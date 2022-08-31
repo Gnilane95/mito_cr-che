@@ -12,10 +12,10 @@ $error = [];
 $errorMessage = "<span class=text-red-500>Ce champs est obligatoire</span>";
 $success = false ;
 
-if (!empty($_POST["submited"])) {
+if (!empty($_POST["submited"]) && isset($_FILES["url_img"]) && $_FILES["url_img"]["error"] == 0) {
     //2-Faille xss
         require_once("validation-formulaire-enfant/include.php");
-        #debug_array($_FILES);
+        debug_array($_FILES);
         if (count($error) == 0){
             require_once("sql-enfant/ajouterEnfant-sql.php");
         }
@@ -30,7 +30,7 @@ if (!empty($_POST["submited"])) {
                     ?>
                 </div>
                 <!-- formulaire Enfant -->
-                <form class="py-8 pl-20" method="POST">
+                <form class="py-8 pl-20" method="POST" enctype="multipart/form-data">
                     <!-- input nom -->
                     <div class="p-5">
 
@@ -140,8 +140,8 @@ if (!empty($_POST["submited"])) {
 
                     </div>
                     <!-- liste d'attente -->
-                    <label class="text-red-500 font-semibold block pb-3" for="attente "> Liste d'attente :</label>
-                    <div class="p-5 flex items-center space-x-10">
+                    <label class="pl-5 text-red-500 font-semibold block pb-3" for="attente "> Liste d'attente :</label>
+                    <div class="px-5 flex items-center space-x-10">
 
                         <div class="form-control ">
                             <label class="label cursor-pointer block flex items-center  pb-3">
@@ -163,6 +163,18 @@ if (!empty($_POST["submited"])) {
                             } ?>
                         </p>
                     </div>
+                    <!-- upload img -->
+                    <div class="p-5">
+                        <label for="url_img" class="text-red-500 font-semibold block pb-3">Téléchargez une image</label>
+                        <input type="file" name="url_img" id="url_img" class="pt-3">
+                        <p>
+                            <?php
+                            if(!empty($error["url_img"])){
+                                echo $error["url_img"];
+                            } ?>
+                        </p>
+                    </div>
+                    <!-- input submit -->
                     <div class="p-5">
                         <input type="submit" name="submited" value="Ajouter" class="btn btn-error">
                     </div>

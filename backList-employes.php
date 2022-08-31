@@ -1,7 +1,7 @@
 <?php
 session_start();
-include ('partials/_header.php');
 $title = "BackList-Employés";
+include ('partials/_header.php');
 
 ?>
         <?php require_once('partials/_alert.php') ?>
