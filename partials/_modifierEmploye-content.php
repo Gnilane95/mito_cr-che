@@ -1,5 +1,5 @@
 <?php
-$title = "Ajouter_Enfant";
+$title = "Ajouter_Employe";
 include ('partials/_header.php');
 include ('helpers/functions.php');
 //inclure PDO pour la connexion à la BDD
@@ -40,10 +40,10 @@ $success = false ;
 
 if (!empty($_POST["submited"])) {
     //2-Faille xss
-        require_once("validation-formulaire-employe/include.php");
+        require_once("validation-formulaire-employe/include-employe.php");
         #debug_array($_FILES);
         if (count($error) == 0){
-            require_once("sql-enfant/updatEmploye-sql.php");
+            require_once("sql-employe/updatEmploye-sql.php");
         }
         #var_dump (count($error));
 }
@@ -51,7 +51,7 @@ if (!empty($_POST["submited"])) {
 ?>
                 <div class="pt-10 pl-20">
                     <?php 
-                    $h1 = "Ajouter un enfant "; 
+                    $h1 = "Ajouter un employe "; 
                     include ('partials/_h1.php'); 
                     ?>
                 </div>
@@ -61,7 +61,7 @@ if (!empty($_POST["submited"])) {
                     <div class="p-5">
 
                         <label class="text-red-500 font-semibold block pb-3" for="nom"> Nom :</label>
-                        <input name="nom" type="text" placeholder="Nom" class="input input-bordered w-full max-w-xs" value="<?= $enfant["nom"] ?>" />
+                        <input name="nom" type="text" placeholder="Nom" class="input input-bordered w-full max-w-xs" value="<?= $employe["nom"] ?>" />
                         <p>
                             <?php
                             if(!empty($error["nom"])){
@@ -73,7 +73,7 @@ if (!empty($_POST["submited"])) {
                     <div class="p-5">
 
                         <label class="text-red-500 font-semibold block pb-3" for="prenom"> Prenom :</label>
-                        <input name="prenom" type="text" placeholder="Prenom" class="input input-bordered w-full max-w-xs" value="<?= $enfant["prenom"] ?>" />
+                        <input name="prenom" type="text" placeholder="Prenom" class="input input-bordered w-full max-w-xs" value="<?= $employe["prenom"] ?>" />
                         <p>
                             <?php
                             if(!empty($error["prenom"])){
@@ -81,76 +81,10 @@ if (!empty($_POST["submited"])) {
                             } ?>
                         </p>
                     </div>
-                    <!-- input date de naissance -->
-                    <div class="p-5">
-                        <?php 
-                            $dateNaissance = date("Y-m-d", strtotime($enfant['date_naissance']))
-                        ?>
-
-                        <label class="text-red-500 font-semibold block pb-3" for="naissance"> Date de naissance :</label>
-                        <input class="input input-bordered w-full max-w-xs" name="naissance" type="date" value="<?=  $dateNaissance ?>"/>
-                        <p>
-                            <?php
-                            if(!empty($error["naissance"])){
-                                echo $error["naissance"];
-                            } ?>
-                        </p>
-
-                    </div>
-                    <!-- input entree en creche -->
-                    <div class="p-5 ">
-                        <?php 
-                            $dateEntree = date("Y-m-d", strtotime($enfant['entree_en_creche']))
-                        ?>
-                        <label class="text-red-500 font-semibold block pb-3" for="entree">Date d'entrée en creche :</label>
-                        <input name="entree" type="date" class="input input-bordered w-full max-w-xs" value="<?= $dateEntree ?>" />
-                        <p>
-                            <?php
-                            if(!empty($error["entree"])){
-                                echo $error["entree"];
-                            } ?>
-                        </p>
-                    </div>
-                    <!-- input name pere -->
-                    <div class="p-5">
-                        <label class="text-red-500 font-semibold block pb-3" for="pere"> Prénom et Nom du Père :</label>
-                        <input name="pere" type="text" placeholder="Duyère Daniel" class="input input-bordered w-full max-w-xs" value="<?= $enfant["prenom_nom_du_pere"] ?>"/>
-                        <p>
-                            <?php
-                            if(!empty($error["pere"])){
-                                echo $error["pere"];
-                            } ?>
-                        </p>
-
-                    </div>
-                    <!-- input name mere -->
-                    <div class="p-5">
-                        <label class="text-red-500 font-semibold block pb-3" for="mere"> Prénom et Nom de la mère :</label>
-                        <input name="mere" type="text" placeholder="Lavache Margerite" class="input input-bordered w-full max-w-xs"  value="<?= $enfant["prenom_nom_de_la_mere"] ?>" />
-                        <p>
-                            <?php
-                            if(!empty($error["mere"])){
-                                echo $error["mere"];
-                            } ?>
-                        </p>
-                    </div>
-                    <!-- adress -->
-                    <div class="p-5">
-                        <label class="text-red-500 font-semibold block pb-3" for="adresse"> Adresse :</label>
-                        <input name="adresse" type="text" class="input input-bordered w-full max-w-xs"
-                         value="<?= $enfant["adresse"] ?>"  />
-                        <p>
-                            <?php
-                            if(!empty($error["adresse"])){
-                                echo $error["adresse"];
-                            } ?>
-                        </p>
-
-                    </div>
                     <!-- email -->
                     <div class="p-5">
                         <label class="text-red-500 font-semibold block pb-3" for="email"> E-mail :</label>
-                        <input name="email" type="email" placeholder="info@site.com" class="input input-bordered w-full max-w-xs" value="<?= $enfant["email"] ?>" />
+                        <input name="email" type="email" placeholder="info@site.com" class="input input-bordered w-full max-w-xs" value="<?= $employe["email"] ?>" />
                         <p>
                             <?php
                             if(!empty($error["email"])){
@@ -162,7 +96,7 @@ if (!empty($_POST["submited"])) {
                     <!-- Tel -->
                     <div class="p-5">
                         <label class="text-red-500 font-semibold block pb-3" for="tel"> Tel :</label>
-                        <input name="tel" type="tel" placeholder="00 00 00 00 00" class="input input-bordered w-full max-w-xs" value="<?= $enfant["telephone"] ?>">
+                        <input name="tel" type="tel" placeholder="00 00 00 00 00" class="input input-bordered w-full max-w-xs" value="<?= $employe["telephone"] ?>">
                         <p>
                             <?php
                             if(!empty($error["tel"])){
@@ -171,34 +105,62 @@ if (!empty($_POST["submited"])) {
                         </p>
 
                     </div>
-                    <!-- liste d'attente -->
-                    <label class="text-red-500 font-semibold block pb-3" for="attente "> Liste d'attente :</label>
-                    <div class="p-5 flex items-center space-x-10">
-
-                        <div class="form-control ">
-                            <label class="label cursor-pointer block flex items-center  pb-3">
-                                <input type="radio" name="attente" class="radio checked:bg-black-500" <?php
-                                if ($enfant['liste_attente'] == "Oui") echo 'checked = "checked"'
-                                ?> />
-                                <span class="label-text  pl-3">Oui</span>
-                            </label>
-                        </div>
-                        <div class="form-control ">
-                            <label class=" label cursor-pointer block flex items-center pb-3">
-                                <input type="radio" name="attente" class="radio checked:bg-black-500" <?php
-                                if ($enfant['liste_attente'] == "Non") echo 'checked = "checked"'
-                                ?>/>
-                                <span class="label-text pl-3">Non</span>
-                            </label>
-
-                        </div>
-
+                    <!-- adress -->
+                    <div class="p-5">
+                        <label class="text-red-500 font-semibold block pb-3" for="adresse"> Adresse :</label>
+                        <input name="adresse" type="text" class="input input-bordered w-full max-w-xs"
+                         value="<?= $employe["adresse"] ?>"  />
                         <p>
                             <?php
-                            if(!empty($error["attente"])){
-                                echo $error["attente"];
+                            if(!empty($error["adresse"])){
+                                echo $error["adresse"];
                             } ?>
                         </p>
+
+                    </div>
+                    <!-- type de contrat -->
+                    <?php
+                    $typeArray = [
+                        ["nom" => "CDD"],
+                        ["nom" => "CDI"],
+                        ["nom" => "INTERIM"],
+
+                    ];
+                    ?>
+
+                    <div class="p-5">
+                        <p class="text-red-500 font-semibold block pb-3">Type de contrat</p>
+                        <select class="select select-bordered w-full max-w-xs" name="type">
+                            <option disabled selected>Choisir</option>
+                            <?php foreach ($typeArray as $type) : ?>
+                                <option value="<?= $type["nom"] ?>" <?php if ($employe["type_contrat"] == $type["nom"]) echo 'selected = "selected"'; ?> > 
+                                    <?= $type["nom"] ?> 
+                                </option>
+                            <?php endforeach ?>
+
+                        </select>
+                        <p>
+                            <?php
+                            if (!empty($error["type"])) {
+                                echo $error["type"];
+                            } ?>
+                        </p>
+
+                    </div>
+                    <!-- input date début contrat -->
+                    <div class="p-5">
+                        <?php 
+                            $dateContrat = date("Y-m-d", strtotime($employe['date_debut_contrat']))
+                        ?>
+                        <label class="text-red-500 font-semibold block pb-3" for="date"> Date de début de contrat :</label>
+                                <input name="date" type="date" placeholder="" class="input input-bordered w-full max-w-xs" value="<?= $dateContrat ?>" />
+                                <p>
+                                    <?php
+                                    if (!empty($error["date"])) {
+                                        echo $error["date"];
+                                    } ?>
+                                </p>
+
                     </div>
                     <div class="p-5">
                         <input type="submit" name="submited" value="Modifier" class="btn btn-error">

@@ -114,8 +114,9 @@ if (!empty($_POST["submited"])) {
     ?>
 
     <div class="p-5">
+        <p class="text-red-500 font-semibold block pb-3">Type de contrat</p>
         <select class="select select-bordered w-full max-w-xs" name="type">
-            <option disabled selected>Type de contrat</option>
+            <option disabled selected>Choisir</option>
             <?php foreach ($typeArray as $type) : ?>
                 <option value="<?= $type["nom"] ?>" 
                     <?php

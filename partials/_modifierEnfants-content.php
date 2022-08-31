@@ -1,5 +1,5 @@
 <?php
-$title = "Ajouter_Enfant";
+$title = "Modifier-Enfant";
 include ('partials/_header.php');
 include ('helpers/functions.php');
 //inclure PDO pour la connexion à la BDD
@@ -30,7 +30,7 @@ $success = false ;
             #debug_array($enfant);
             #$enfant=[];
             if (!$enfant) {
-                $_SESSION["error"]="Ce jeu est indisponible !";
+                $_SESSION["error"]="Info  indisponible !";
                 header("Location: backoffice.php");
             }
         } else {
@@ -186,8 +186,7 @@ if (!empty($_POST["submited"])) {
                         <div class="form-control ">
                             <label class=" label cursor-pointer block flex items-center pb-3">
                                 <input type="radio" name="attente" class="radio checked:bg-black-500" <?php
-                                if ($enfant['liste_attente'] == "Non") echo 'checked = "checked"'
-                                ?>/>
+                                if ($enfant['liste_attente'] == "Non") echo 'checked = "checked"' ?>/> 
                                 <span class="label-text pl-3">Non</span>
                             </label>
 

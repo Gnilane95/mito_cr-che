@@ -1,6 +1,6 @@
 <?php
 //1- Ecriture de la requête
-$sql = "UPDATE enfants SET nom = :nom, prenom = :prenom, email = :email, telephone = :telephone, adresse = :adresse, entree_en_creche = :entree_en_creche, date_naissance = :date_naissance, liste_attente = :liste_attente, prenom_nom_du_pere = :prenom_nom_du_pere, prenom_nom_de_la_mere = : prenom_nom_de_la_mere, updated_at = NOW() WHERE id= :id";
+$sql = "UPDATE enfants SET nom = :nom, prenom = :prenom, email = :email, telephone = :telephone, adresse = :adresse, entree_en_creche = :entree_en_creche, date_naissance = :date_naissance, liste_attente = :liste_attente, prenom_nom_du_pere = :prenom_nom_du_pere, prenom_nom_de_la_mere = : prenom_nom_de_la_mere WHERE id= :id";
 
 //2- On prépare la requête
 $query = $pdo->prepare($sql);
@@ -22,5 +22,5 @@ $query->bindValue(':liste_attente', $attente, PDO::PARAM_STMT);
 $query->execute();
 
 //5- Redirection
-$_SESSION["success"] = "Le jeu a bien été modifié";
+$_SESSION["success"] = "Données modifiées avec succés";
 header("Location: backoffice.php");
