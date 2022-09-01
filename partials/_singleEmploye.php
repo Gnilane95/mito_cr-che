@@ -42,7 +42,7 @@ if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
             <p class="font-bold text-red-500 text-4xl"><?= $employe['nom']; ?></p>
             <p class="font-bold text-red-500 text-4xl"><?= $employe['prenom']; ?></p>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center gap-10 mx-20">
             <div class=" ">
                 <?php
                 if ($employe["url_img"] != null) { ?>
@@ -50,7 +50,7 @@ if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
                 <?php } ?>
             </div>
             <div class="">
-                <ul class="mx-36">
+                <ul class="">
                     <li class="pb-4 text-lg font-medium">E-mail : <?= $employe['email']; ?></li>
                     <li class="pb-4 text-lg font-medium">Tel : <?= $employe['telephone']; ?></li>
                     <li class="pb-4 text-lg font-medium">Adresse : <?= $employe['adresse']; ?></li>
@@ -62,7 +62,7 @@ if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
         </div>
 </div>
     <!-- boutton -->
-<div class="flex justify-center pt-5">
+<div class="flex justify-center pt-10">
     <!-- boutton1 -->
     <div class="pr-3">
         <?php include ('partials/_modifyEmploye.php') ?>

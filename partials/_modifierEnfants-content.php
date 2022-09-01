@@ -41,8 +41,8 @@ $success = false ;
 if (!empty($_POST["submited"])) {
     //2-Faille xss
         require_once("validation-formulaire-enfant/include.php");
-        #debug_array($_POST);
-        #debug_array($_FILES);
+        // var_dump($_POST);
+        // var_dump($_FILES["url_img"]["name"]);
         if (count($error) == 0){
             require_once("sql-enfant/updatEnfant-sql.php");
 
@@ -180,7 +180,7 @@ if (!empty($_POST["submited"])) {
 
                         <div class="form-control ">
                             <label class="label cursor-pointer block flex items-center  pb-3">
-                                <input type="radio" name="attente" class="radio checked:bg-black-500" <?php
+                                <input type="radio" name="attente" class="radio checked:bg-black-500" value="Oui" <?php
                                 if ($enfant['liste_attente'] == "Oui") echo 'checked = "checked"'
                                 ?> />
                                 <span class="label-text  pl-3">Oui</span>
@@ -188,7 +188,7 @@ if (!empty($_POST["submited"])) {
                         </div>
                         <div class="form-control ">
                             <label class=" label cursor-pointer block flex items-center pb-3">
-                                <input type="radio" name="attente" class="radio checked:bg-black-500" <?php
+                                <input type="radio" name="attente" class="radio checked:bg-black-500" value="Non" <?php
                                 if ($enfant['liste_attente'] == "Non") echo 'checked = "checked"' ?>/> 
                                 <span class="label-text pl-3">Non</span>
                             </label>

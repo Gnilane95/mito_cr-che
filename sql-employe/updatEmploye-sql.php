@@ -1,6 +1,6 @@
 <?php
 //1- Ecriture de la requête
-$sql = "UPDATE employes SET nom = :nom, prenom = :prenom, email = :email, telephone = :telephone, adresse = :adresse, date_debut_contrat = :date_debut_contrat, type_contrat= :type_contrat, updated_at = NOW() WHERE id= :id";
+$sql = "UPDATE employes SET nom = :nom, prenom = :prenom, email = :email, telephone = :telephone, adresse = :adresse, date_debut_contrat = :date_debut_contrat, type_contrat= :type_contrat, url_img = :url_img WHERE id= :id";
 
 //2- On prépare la requête
 $query = $pdo->prepare($sql);
@@ -14,6 +14,7 @@ $query->bindValue(':telephone', $tel, PDO::PARAM_STMT);
 $query->bindValue(':adresse', $adresse, PDO::PARAM_STR);
 $query->bindValue(':date_debut_contrat', $date, PDO::PARAM_STMT);
 $query->bindValue(':type_contrat', $type, PDO::PARAM_STR);
+$query->bindValue(':url_img', $url_img, PDO::PARAM_STR);
 
 //4- On exécute la requête
 $query->execute();
