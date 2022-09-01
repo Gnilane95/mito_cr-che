@@ -30,7 +30,7 @@ $success = false ;
             #debug_array($enfant);
             #$enfant=[];
             if (!$enfant) {
-                $_SESSION["error"]="Info  indisponible !";
+                $_SESSION["error"]="Infos  indisponibles !";
                 header("Location: backoffice.php");
             }
         } else {
@@ -41,7 +41,7 @@ $success = false ;
 if (!empty($_POST["submited"])) {
     //2-Faille xss
         require_once("validation-formulaire-enfant/include.php");
-        debug_array($_POST);
+        #debug_array($_POST);
         #debug_array($_FILES);
         if (count($error) == 0){
             require_once("sql-enfant/updatEnfant-sql.php");

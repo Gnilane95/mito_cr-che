@@ -29,4 +29,6 @@ if(isset($_FILES["url_img"]) && $_FILES["url_img"]["error"] == 0){
     }else {
         $error["url_img"] = "<span class=text-red-500>Fichier volumineux</span>" ;      
     }
+} else {
+    $img_upload_path = [];
 }

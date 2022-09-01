@@ -22,5 +22,5 @@ $query->bindValue(':liste_attente', $attente, PDO::PARAM_STMT);
 $query->execute();
 
 //5- Redirection
-$_SESSION["success"] = "Données modifiées avec succés";
+$_SESSION["success"] = "Données modifiées avec succès";
 header("Location: backoffice.php");
