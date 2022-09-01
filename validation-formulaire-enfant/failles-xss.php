@@ -9,5 +9,5 @@ $adresse = clear_xss($_POST["adresse"]);
 $email = clear_xss($_POST["email"]);
 $tel = clear_xss($_POST["tel"]);
 $attente = clear_xss($_POST["attente"]);
-$url_img = $GLOBALS["img_upload_path"] ;
+$url_img = $img_upload_path ;
  

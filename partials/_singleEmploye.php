@@ -43,8 +43,11 @@ if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
             <p class="font-bold text-red-500 text-4xl"><?= $employe['prenom']; ?></p>
         </div>
         <div class="flex justify-center">
-            <div class="mx-10 ">
-                <img class="w-56" src="partials/sadim.jpg" alt="">
+            <div class=" ">
+                <?php
+                if ($employe["url_img"] != null) { ?>
+                    <img src="<?= $employe["url_img"] ?>" alt="<?=$employe["url_img"]?>" class="max-w-md">
+                <?php } ?>
             </div>
             <div class="">
                 <ul class="mx-36">

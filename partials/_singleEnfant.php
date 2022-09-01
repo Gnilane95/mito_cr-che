@@ -42,23 +42,23 @@ if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
             <p class="font-bold text-red-500 text-4xl"><?= $enfant['nom']; ?></p>
             <p class="font-bold text-red-500 text-4xl"><?= $enfant['prenom']; ?></p>
         </div>
-        <div class="flex justify-center mx-36">
+        <div class="flex justify-center gap-10 mx-20 ">
             <div class=" ">
                 <?php
                 if ($enfant["url_img"] != null) { ?>
-                    <img src="<?= $enfant["url_img"] ?>" alt="<?=$enfant["url_img"]?>" class="w-48">
+                    <img src="<?= $enfant["url_img"] ?>" alt="<?=$enfant["url_img"]?>" class="max-w-md">
                 <?php } ?>
             </div>
             <div class="">
                 <ul class="">
-                    <li class="pb-4 text-lg font-medium">Date de naissance : <?= $enfant['date_naissance']; ?></li>
-                    <li class="pb-4 text-lg font-medium">Date d'entrée en creche : <?= $enfant['entree_en_creche']; ?></li>
-                    <li class="pb-4 text-lg font-medium">Prénom et nom du père : <?= $enfant['prenom_nom_du_pere']; ?></li>
-                    <li class="pb-4 text-lg font-medium">Prénom et nom de la mère : <?= $enfant['prenom_nom_de_la_mere']; ?></li>
-                    <li class="pb-4 text-lg font-medium">Email : <?= $enfant['email']; ?></li>
-                    <li class="pb-4 text-lg font-medium">Tel : <?= $enfant['telephone']; ?></li>
-                    <li class="pb-4 text-lg font-medium">Adresse : <?= $enfant['adresse']; ?></li>
-                    <li class="pb-4 text-lg font-medium">Liste d'attente : <?= $enfant['liste_attente']; ?></li>
+                    <li class="pb-2 text-lg font-medium">Date de naissance : <?= $enfant['date_naissance']; ?></li>
+                    <li class="pb-2 text-lg font-medium">Date d'entrée en creche : <?= $enfant['entree_en_creche']; ?></li>
+                    <li class="pb-2 text-lg font-medium">Prénom et nom du père : <?= $enfant['prenom_nom_du_pere']; ?></li>
+                    <li class="pb-2 text-lg font-medium">Prénom et nom de la mère : <?= $enfant['prenom_nom_de_la_mere']; ?></li>
+                    <li class="pb-2 text-lg font-medium">Email : <?= $enfant['email']; ?></li>
+                    <li class="pb-2 text-lg font-medium">Tel : <?= $enfant['telephone']; ?></li>
+                    <li class="pb-2 text-lg font-medium">Adresse : <?= $enfant['adresse']; ?></li>
+                    <li class="pb-2 text-lg font-medium">Liste d'attente : <?= $enfant['liste_attente']; ?></li>
                 </ul>
             </div>
         </div>
@@ -67,7 +67,7 @@ if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
     <div class="">
 
         <div>
-            <div class="flex justify-center ">
+            <div class="flex justify-center pt-10">
                 <!-- boutton1 -->
                 <div class="p-3">
                     <?php include ('partials/_modifyEnfant.php') ?>

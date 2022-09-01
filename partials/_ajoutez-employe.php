@@ -29,7 +29,7 @@ if (!empty($_POST["submited"])) {
                     ?>
                 </div>
 <!-- formulaire employée -->
-<form class="py-8 pl-20" method="POST">
+<form class="py-8 pl-20" method="POST" enctype="multipart/form-data">
     <!-- input nom -->
     <div class="p-5">
 
@@ -154,6 +154,17 @@ if (!empty($_POST["submited"])) {
         </p>
 
     </div>
+    <!-- upload img -->
+    <div class="p-5">
+                        <label for="url_img" class="text-red-500 font-semibold block pb-3">Téléchargez une image</label>
+                        <input type="file" name="url_img" id="url_img" class="pt-3">
+                        <p>
+                            <?php
+                            if(!empty($error["url_img"])){
+                                echo $error["url_img"];
+                            } ?>
+                        </p>
+                    </div>
     <!-- button -->
     <div class="p-5">
         <input type="submit" name="submited" value="Ajouter" class="btn btn-error">

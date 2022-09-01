@@ -1,4 +1,5 @@
 <?php
+if(isset($_FILES["url_img"]) && $_FILES["url_img"]["error"] == 0){
 //nom des variables
     $files_name = $_FILES["url_img"] ["name"];
     $files_size = $_FILES["url_img"] ["size"];
@@ -6,7 +7,7 @@
     $files_type = $_FILES["url_img"] ["type"];
 
 //2-on vérifie la taille de l'image
-    $sizeMax = 2000000; //2mo
+    $sizeMax = 5000000; //5mo
     if ($files_size <= $sizeMax) {
         //3-on vérifie l'extension du ficher
             //a-Je récupère le chemin du fichier à uploader
@@ -28,3 +29,4 @@
     }else {
         $error["url_img"] = "<span class=text-red-500>Fichier volumineux</span>" ;      
     }
+}

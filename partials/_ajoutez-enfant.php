@@ -7,14 +7,14 @@ require_once ("helpers/pdo.php");
 //debug_array($_GET)
 
 //Traitement du formulaire
-//Création du formulaire
+// Création du formulaire
 $error = [];
 $errorMessage = "<span class=text-red-500>Ce champs est obligatoire</span>";
 $success = false ;
 
-if (!empty($_POST["submited"]) && isset($_FILES["url_img"]) && $_FILES["url_img"]["error"] == 0) {
+if (!empty($_POST["submited"]) ) {
     //2-Faille xss
-        debug_array($_FILES);
+        #debug_array($_FILES);
         require_once("validation-formulaire-enfant/include.php");
         #debug_array($_FILES);
         if (count($error) == 0){
@@ -146,13 +146,13 @@ if (!empty($_POST["submited"]) && isset($_FILES["url_img"]) && $_FILES["url_img"
 
                         <div class="form-control ">
                             <label class="label cursor-pointer block flex items-center  pb-3">
-                                <input type="radio" name="attente" class="radio checked:bg-red-500" checked />
+                                <input type="radio" name="attente" class="radio checked:bg-red-500" value="Oui" checked />
                                 <span class="label-text  pl-3">Oui</span>
                             </label>
                         </div>
                         <div class="form-control ">
                             <label class=" label cursor-pointer block flex items-center pb-3">
-                                <input type="radio" name="attente" class="radio checked:bg-red-500" />
+                                <input type="radio" name="attente" class="radio checked:bg-red-500" value="Non"/>
                                 <span class="label-text pl-3">Non</span>
                             </label>
 

@@ -1,4 +1,5 @@
 <?php
+require_once('input-employe-upload.php');
 require_once('faillesEmploye-xss.php');
 require_once('input-employe-nom.php');
 require_once('input-employe-prenom.php');

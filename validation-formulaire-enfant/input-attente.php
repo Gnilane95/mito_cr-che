@@ -1,6 +1,6 @@
 <?php
 if (!empty($attente)) {
-        #$attente = $_POST["attente"];
+        #debug_array($_POST["attente"]);
         if ($attente == "Oui" || $attente == "Non") {
             echo "";
         }
