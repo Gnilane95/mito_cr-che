@@ -1,7 +1,7 @@
 <?php
 session_start();
+$title = "Modifier-enfant";
 include ('partials/_header.php');
-$title = "BackOffice";
 
 ?>
         <div>

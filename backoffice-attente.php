@@ -1,7 +1,7 @@
 <?php
 session_start();
+$title = "Liste-attente";
 include ('partials/_header.php');
-$title = "BackOffice-attente";
 
 ?>
         <?php require_once('partials/_alert.php') ?>

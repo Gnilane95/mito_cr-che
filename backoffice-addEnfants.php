@@ -1,6 +1,6 @@
 <?php
 session_start();
-$title = "BackOffice";
+$title = "Ajouter-enfant";
 include ('partials/_header.php');
 
 ?>
