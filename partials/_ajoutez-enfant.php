@@ -14,8 +14,9 @@ $success = false ;
 
 if (!empty($_POST["submited"]) && isset($_FILES["url_img"]) && $_FILES["url_img"]["error"] == 0) {
     //2-Faille xss
-        require_once("validation-formulaire-enfant/include.php");
         debug_array($_FILES);
+        require_once("validation-formulaire-enfant/include.php");
+        #debug_array($_FILES);
         if (count($error) == 0){
             require_once("sql-enfant/ajouterEnfant-sql.php");
         }

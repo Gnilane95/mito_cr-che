@@ -36,7 +36,7 @@
                             <?php
                                 $index = 1 ;
                                 if (count($enfants) == 0) {
-                                    echo "<tr><td class=text-center>Pas de jeux disponibles actuellement.</td></tr>";
+                                    echo "<tr><td class=text-center>Données indisponibles.</td></tr>";
                                 } else { ?>
                                     <?php foreach ($enfants as $enfant) : ?>
                                     <tr class="hover:text-blue-500 hover:font-bold">
